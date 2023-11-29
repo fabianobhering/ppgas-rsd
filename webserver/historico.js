@@ -7,7 +7,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 // Configuração do MQTT
-const mqttBrokerUrl = 'mqtt://192.168.64.11';
+const mqttBrokerUrl = 'mqtt://ip-broker';
 const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 const mqttClient = mqtt.connect(mqttBrokerUrl);
 
