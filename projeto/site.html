@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leitura de Dados</title>
+    <title>WebSocket Real-time Data</title>
 </head>
 <body>
     <h1>Real-time Sensor Data</h1>
@@ -12,8 +12,8 @@
     <ul id="sensorDataList"></ul>
 
     <script>
-      // Substitua 'http://ip-servidor:3000' pela URL real do seu websocket>  
-      const socket = new WebSocket('ws://ip-servidor:3000');
+        const socket = new WebSocket('ws://ip-websocket:3000');
+
         socket.addEventListener('message', (event) => {
             const sensorData = JSON.parse(event.data);
             updateSensorData(sensorData);
@@ -26,13 +26,13 @@
         function updateSensorData(data) {
             const sensorDataList = document.getElementById('sensorDataList');
             const listItem = document.createElement('li');
-            listItem.textContent = `Sensor: ${data.sensor}, Valor: ${data.value}, Timest>
+            listItem.textContent = `Sensor: ${data.sensor}, Valor: ${data.value}, Timestamp: ${data.timestamp}`;
             sensorDataList.appendChild(listItem);
         }
 
         function getSensorDataHistory() {
-            // Substitua 'http://ip-servidor/api/historico' pela URL real da sua API>
-            fetch('http://ip-servidor:3000/api/historico')
+            // Substitua 'http://ip-webserver:3000/api/historico' pela URL real da sua API que fornece o histórico
+            fetch('http://ip-webserver:3000/api/historico')
                 .then(response => response.json())
                 .then(historyData => {
                     // Limpar a lista de dados atuais
