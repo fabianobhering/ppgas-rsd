@@ -29,3 +29,4 @@ function publishSensorData(data) {
     // Publica os dados no tópico MQTT
     mqttClient.publish(mqttTopic, JSON.stringify(data));
     console.log(`Dado do sensor publicado: ${JSON.stringify(data)}`);
+}
