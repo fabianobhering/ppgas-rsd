@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+var cors = require('cors');
+app.use(express.static("public"));
+app.use(cors());
 
 // Dados simulados para o histórico
 // Adicione o código para obter os dados do banco de dados
