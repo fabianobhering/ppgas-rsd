@@ -41,8 +41,6 @@ function storeSensorData(data) {
     fs.readFile('historico.json', 'utf-8')
         .then((currentData) => {
             const sensorHistory = currentData ? JSON.parse(currentData) : [];
-
-            //const sensorHistory = JSON.parse(currentData);
             sensorHistory.push(data);
             return fs.writeFile('historico.json', JSON.stringify(sensorHistory, null, 2), 'utf-8');
         })
