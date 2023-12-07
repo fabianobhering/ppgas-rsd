@@ -5,9 +5,10 @@ sudo apt -y install apache2
 echo "INSTALANDO O NODEJS..."
 sudo apt -y install nodejs
 sudo apt -y install npm
-sudo wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 sudo npm install pm2 -g
 sudo npm install --prefix projeto
+nvm install 18
 echo "INSTALANDO O MOSQUITTO..."
 sudo apt -y install mosquitto
 sudo apt -y install mosquitto-clients
