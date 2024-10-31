@@ -13,11 +13,12 @@ O sistema é composto por 3 servidores:<p>
   &emsp;3.	MQTT Broker:<p>
     &emsp;&emsp;-	Um broker MQTT que gerencia a comunicação entre os sensores e os consumidores de dados.<p>
     &emsp;&emsp;-	Os sensores publicarão dados em tópicos MQTT, e os consumidores (WebServer e WebSocket) assinam esses tópicos para receber atualizações.<p>
- 
+
+
 Arquitetura:<p>
 
 
-<img width="564" alt="Screenshot 2024-06-06 at 10 00 50" src="https://github.com/fabianobhering/ppgas-rsd/assets/5489086/02482804-dc99-4711-a157-adae2cc6e574">
+<img width="564" src="https://github.com/user-attachments/assets/ef9a1281-4149-4a2a-aeae-14bc0dc570da">
 
 <p><p>
 Fluxo de Dados:<p>
