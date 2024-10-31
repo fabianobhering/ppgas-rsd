@@ -8,7 +8,7 @@ const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 const mqttClient = mqtt.connect(mqttBrokerUrl);
 
 // Configuração do servidor WebSocket
-const wss = new WebSocket.Server({ port: 3000 });
+const wss = new WebSocket.Server({ port: 3001 });
 
 wss.on('connection', (ws) => {
     console.log('Cliente WebSocket conectado.');
@@ -36,4 +36,4 @@ function sendWebSocketData(ws, data) {
     ws.send(JSON.stringify(data));
 }
 
-console.log('WebSocket iniciado na porta 3000.');
+console.log('WebSocket iniciado na porta 3001.');
