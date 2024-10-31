@@ -8,7 +8,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 // Configuração do MQTT
-const mqttBrokerUrl = 'mqtt://ip-broker';
+const mqttBrokerUrl = 'mqtt://localhost';
 const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 const mqttClient = mqtt.connect(mqttBrokerUrl);
 
@@ -26,11 +26,11 @@ mqttClient.on('message', (topic, message) => {
 
 //Configuração do MySQL
 const db ={
-    host     : 'ip-mysql',
+    host     : 'localhost',
     port     : 3306,
-    user     : '00000000000',
-    password : '00000000000',
-    database : '00000000000'
+    user     : 'admin',
+    password : 'admin',
+    database : 'projeto'
   }
 
 function execSQLQuery(sqlQry, id, res){
