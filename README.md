@@ -2,16 +2,19 @@
 O projeto utiliza os diferentes meios de comunicação, como WebServer, WebSocket e MQTT. Como exemplo, temos um sistema de monitoramento de sensores em tempo real.
 <p>
   
-O sistema é composto por 3 servidores:<p>
+O sistema é composto por 4 servidores:<p>
   &emsp;1.	WebServer:<p>
     &emsp;&emsp;-	Um servidor web que fornece uma interface para visualização dos dados monitorados.<p>
     &emsp;&emsp;-	O servidor exibe os dados obtidos pelo WebSocket em tempo real <p>
     &emsp;&emsp;-	O servidor assina um tópico MQTT para receber e manter um histórico dos dados coletados pelos sensores no DBServer.<p>
     &emsp;&emsp;-	O servidor disponibiliza uma api que retorna os dados armazenados no DBServer.<p>
-  &emsp;2.	WebSocket:<p>
+   &emsp;2.	DBServer:<p>
+    &emsp;&emsp;-	Servidor MySQL responsável por armazenar os dados dos sensores.<p>
+    &emsp;&emsp;-	O servidor possui um banco de dados "projeto" contendo uma tabela "sensor" com os campos id, date e value<p>
+  &emsp;3.	WebSocket:<p>
     &emsp;&emsp;-	Um servidor WebSocket que permite a comunicação bidirecional em tempo real.<p>
     &emsp;&emsp;-	O servidor notifica o cliente sobre atualizações instantâneas nos dados dos sensores.<p>
-  &emsp;3.	MQTT Broker:<p>
+  &emsp;4.	MQTT Broker:<p>
     &emsp;&emsp;-	Um broker MQTT que gerencia a comunicação entre os sensores e os consumidores de dados.<p>
     &emsp;&emsp;-	Os sensores publicarão dados em tópicos MQTT, e os consumidores (WebServer e WebSocket) assinam esses tópicos para receber atualizações.<p>
 
