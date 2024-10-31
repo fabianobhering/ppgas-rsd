@@ -8,7 +8,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 // Configuração do MQTT
-const mqttBrokerUrl = 'mqtt://localhost';
+const mqttBrokerUrl = 'mqtt://ip-broker';
 const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 const mqttClient = mqtt.connect(mqttBrokerUrl);
 
@@ -37,12 +37,14 @@ function execSQLQuery(sqlQry, id, res){
   const connection = mysql.createConnection(db);
   
   connection.query(sqlQry, id, (error, results, fields) => {
-    
+    if(res){
       if(error) 
         res.json(error);
       else
         res.json(results);
-    
+    }else 
+        console.log(error);
+        
       connection.end();
       console.log('executou!');
   });
@@ -54,8 +56,8 @@ app.get('/api/sensor', (req, res) => {
 
 // Função para armazenar dados do sensor no arquivo JSON
 function storeSensorData(data) {
-    const id =[data];
-    execSQLQuery('INSERT INTO sensor(date, value) VALUES(now(), ?)',id, res);
+    const id =[JSON.stringify(data)];
+    execSQLQuery('INSERT INTO sensor(value) VALUES(?)',id, null);
 }
 
 const port = 3000; // Escolha a porta desejada
