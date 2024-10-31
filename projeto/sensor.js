@@ -1,6 +1,6 @@
 const mqtt = require('mqtt');
 
-const mqttBrokerUrl = 'mqtt://localhost';
+const mqttBrokerUrl = 'mqtt://ip-broker';
 const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 
 // Configuração do cliente MQTT
@@ -19,9 +19,9 @@ mqttClient.on('connect', () => {
 function generateRandomSensorData() {
     // Gera dados aleatórios para simular a leitura do sensor
     return {
-        sensor: 'sensor1',
-        value: Math.random() * 100,
-        timestamp: new Date().toISOString(),
+        sensor1: Math.random() * 100,
+        sensor2: Math.random() * 10,
+        sensor3: Math.random() * 1000
     };
 }
 
