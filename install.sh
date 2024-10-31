@@ -2,6 +2,8 @@ echo "ATUALIZANDO..."
 sudo apt -y  update
 echo "INSTALANDO O APACHE..."
 sudo apt -y install apache2
+echo "INSTALANDO O MYSQL..."
+sudo apt -y install mysql-server
 echo "INSTALANDO O NODEJS..."
 sudo apt -y install nodejs
 sudo apt -y install npm
