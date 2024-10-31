@@ -26,7 +26,7 @@
         function updateSensorData(data) {
             const sensorDataList = document.getElementById('sensorDataList');
             const listItem = document.createElement('li');
-            listItem.textContent = `Sensor: ${data.sensor}, Valor: ${data.value}, Timestamp: ${data.timestamp}`;
+            listItem.textContent = JSON.stringify(data, null, 2);
             sensorDataList.appendChild(listItem);
         }
 
