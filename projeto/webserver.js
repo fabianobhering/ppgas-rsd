@@ -48,7 +48,7 @@ function execSQLQuery(sqlQry, id, res){
   });
 }
 
-app.get('/api/historico', (req, res) => {
+app.get('/api/sensor', (req, res) => {
     execSQLQuery('SELECT * FROM sensor', null, res);
 })
 
