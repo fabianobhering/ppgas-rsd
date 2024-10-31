@@ -2,7 +2,7 @@ const mqtt = require('mqtt');
 const WebSocket = require('ws');
 
 // Configuração do servidor MQTT
-const mqttBrokerUrl = 'mqtt://localhost';
+const mqttBrokerUrl = 'mqtt://ip-broker';
 const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 
 const mqttClient = mqtt.connect(mqttBrokerUrl);
