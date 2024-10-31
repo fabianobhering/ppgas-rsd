@@ -6,7 +6,8 @@ O sistema é composto por 3 servidores:<p>
   &emsp;1.	WebServer:<p>
     &emsp;&emsp;-	Um servidor web que fornece uma interface para visualização dos dados monitorados.<p>
     &emsp;&emsp;-	O servidor exibe os dados obtidos pelo WebSocket em tempo real <p>
-    &emsp;&emsp;-	O servidor assina um tópico MQTT para receber e manter um histórico dos dados coletados pelos sensores.<p>
+    &emsp;&emsp;-	O servidor assina um tópico MQTT para receber e manter um histórico dos dados coletados pelos sensores no DBServer.<p>
+    &emsp;&emsp;-	O servidor disponibiliza uma api que retorna os dados armazenados no DBServer.<p>
   &emsp;2.	WebSocket:<p>
     &emsp;&emsp;-	Um servidor WebSocket que permite a comunicação bidirecional em tempo real.<p>
     &emsp;&emsp;-	O servidor notifica o cliente sobre atualizações instantâneas nos dados dos sensores.<p>
