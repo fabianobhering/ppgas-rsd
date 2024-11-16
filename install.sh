@@ -1,5 +1,6 @@
 echo "ATUALIZANDO..."
-sudo apt -y  update
+sudo apt -y update
+sudo apt -y upgrade
 echo "INSTALANDO O APACHE..."
 sudo apt -y install apache2
 echo "INSTALANDO O MYSQL..."
