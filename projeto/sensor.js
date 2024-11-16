@@ -1,6 +1,6 @@
 const mqtt = require('mqtt');
 
-const mqttBrokerUrl = 'mqtt://ip-broker';
+const mqttBrokerUrl = 'mqtt://localhost';
 const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 
 // Configuração do cliente MQTT
