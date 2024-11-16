@@ -1,6 +1,6 @@
 CREATE DATABASE iot;
 CREATE USER 'iot'@'%' IDENTIFIED BY 'iot-pass';
-GRANT ALL PRIVILEGES ON nome_do_banco.* TO 'iot'@'localhost';
+GRANT ALL PRIVILEGES ON iot.* TO 'iot'@'%';
 FLUSH PRIVILEGES;
 USE iot;
 CREATE TABLE sensor (
