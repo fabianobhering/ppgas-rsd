@@ -5,11 +5,8 @@ sudo apt -y install apache2
 echo "INSTALANDO O MYSQL..."
 sudo apt -y install mysql-server
 echo "INSTALANDO O NODEJS..."
-sudo apt -y install nodejs
-sudo apt -y install npm
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-sudo npm install pm2 -g
-sudo npm install --prefix projeto
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+echo "REINICIAR O SERVIDOR"
 nvm install 20
 echo "INSTALANDO O MOSQUITTO..."
 sudo apt -y install mosquitto
