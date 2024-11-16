@@ -8,7 +8,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 // Configuração do MQTT
-const mqttBrokerUrl = 'mqtt://ip-broker';
+const mqttBrokerUrl = 'mqtt://localhost';
 const mqttTopic = 'sensor/dados'; // Substitua pelo tópico MQTT real
 const mqttClient = mqtt.connect(mqttBrokerUrl);
 
@@ -28,8 +28,8 @@ mqttClient.on('message', (topic, message) => {
 const db ={
     host     : 'localhost',
     port     : 3306,
-    user     : 'admin',
-    password : 'admin',
+    user     : 'root',
+    password : '',
     database : 'projeto'
   }
 
