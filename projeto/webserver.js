@@ -30,7 +30,7 @@ const db ={
     port     : 3306,
     user     : 'root',
     password : '',
-    database : 'projeto'
+    database : 'iot'
   }
 
 function execSQLQuery(sqlQry, id, res){
