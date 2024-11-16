@@ -9,6 +9,7 @@ echo "INSTALANDO O NODEJS..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 echo "REINICIAR O SERVIDOR"
 nvm install 20
+npm install pm2 -g
 echo "INSTALANDO O MOSQUITTO..."
 sudo apt -y install mosquitto
 sudo apt -y install mosquitto-clients
