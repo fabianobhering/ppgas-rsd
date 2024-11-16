@@ -28,8 +28,8 @@ mqttClient.on('message', (topic, message) => {
 const db ={
     host     : 'localhost',
     port     : 3306,
-    user     : 'root',
-    password : '',
+    user     : 'iot',
+    password : 'iot-pass',
     database : 'iot'
   }
 
