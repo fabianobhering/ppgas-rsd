@@ -51,8 +51,9 @@ function execSQLQuery(sqlQry, id, res){
 }
 
 app.get('/api/sensor', (req, res) => {
-    execSQLQuery('SELECT * FROM sensor', null, res);
-})
+    const { start, end } = req.query;
+    execSQLQuery('SELECT * FROM sensor WHERE time >= ? AND time <= ?', [start, end], res);
+});
 
 // Função para armazenar dados do sensor no arquivo JSON
 function storeSensorData(data) {
