@@ -12,7 +12,7 @@
     <ul id="sensorDataList"></ul>
 
     <script>
-        const socket = new WebSocket('ws://localhost:3001');
+        const socket = new WebSocket('ws://ip-websocket:3001');
 
         socket.addEventListener('message', (event) => {
             const sensorData = JSON.parse(event.data);
@@ -31,7 +31,7 @@
         }
 
         function getSensorDataHistory() {
-            fetch('http://localhost:3000/api/sensor')
+            fetch('http://ip-webserver:3000/api/sensor')
                 .then(response => response.json())
                 .then(historyData => {
                     // Limpar a lista de dados atuais
